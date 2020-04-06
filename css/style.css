@@ -1,0 +1,649 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: "Roboto Cn", sans-serif;
+}
+
+header a {
+  text-decoration: none;
+  color: #eee;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
+    url("../img/hotel.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.container {
+  max-width: 120rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 35px;
+  text-transform: uppercase;
+  color: #222;
+}
+
+header nav {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.brand span {
+  color: #e84393;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav ul li {
+  list-style: none;
+}
+
+header nav ul li a {
+  padding: 1rem 0;
+  margin: 0 1rem;
+  position: relative;
+  letter-spacing: 2px;
+}
+
+header nav ul li a:last-child {
+  margin-right: 0;
+}
+
+header nav ul li a::before,
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #e84393;
+  left: 0;
+  transform: scaleX(0);
+  transition: all 0.5s;
+}
+
+header nav ul li a::before {
+  top: 0;
+  transform-origin: left;
+}
+
+header nav ul li a::after {
+  bottom: 0;
+  transform-origin: right;
+}
+
+header nav ul li a:hover::before,
+header nav ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+.header-content {
+  width: 100%;
+  height: 70vh;
+  color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  text-align: center;
+}
+
+.header-title h2 {
+  font-weight: 600;
+}
+
+.header-title p {
+  font-size: 23px;
+  font-weight: 300;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20%;
+}
+
+.button a {
+  transform: translate(-50%, -70%);
+  margin-top: 40px;
+  margin-left: 30px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.button a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #e84393;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: bottom right;
+  transform: scale(0);
+}
+
+.button a:hover:before {
+  transition: transform 0.5s;
+  transform-origin: top left;
+  transform: scale(1);
+}
+
+.button a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: top left;
+  transform: scale(1);
+}
+
+.button a:hover:after {
+  transition: transform 0.5s;
+  transform-origin: bottom right;
+  transform: scale(0);
+}
+
+#facilities {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+#facilities img {
+  width: 100%;
+  height: 300px;
+}
+
+#facilities .box2 {
+  grid-column: 2/4;
+}
+
+#title {
+  margin-top: 80px;
+}
+
+#login_oop {
+  font-family: sans-serif;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
+    url("../img/hotel.jpg") center no-repeat;
+  background-size: cover;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.login-form {
+  width: 400px;
+  margin: auto;
+}
+
+.login-form h2 {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.4;
+  text-align: center;
+  color: #fff;
+}
+
+.form-check {
+  margin-top: 23px;
+  background: rgba(255, 255, 255, 0.35);
+  padding: 25px 30px;
+  border: 4px solid #e84393;
+  border-radius: 25px;
+}
+
+.form-group {
+  margin-top: 23px;
+}
+
+.form-control {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 100px;
+  height: 50px;
+  padding: 0 30px;
+  display: block;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: background 100ms linear 0s;
+}
+
+.form-control:focus {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #222;
+}
+
+.sign-btn {
+  border: none;
+  display: block;
+  width: 100%;
+  margin: 23px auto;
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 100px;
+  color: #fff;
+  background: #303952;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.sign-btn:hover {
+  background: #f4f4f4;
+  color: #000;
+  border: 2px solid #000;
+}
+
+/* Halaman Member */
+#btn {
+  margin-left: 80px;
+  margin-top: 50px;
+}
+
+#about {
+  margin: 80px 0px;
+}
+
+.grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid img {
+  width: 100%;
+}
+
+#food {
+  margin: 50px 0;
+}
+
+.boc {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+#food .boc img {
+  width: 100%;
+}
+
+.boc>div {
+  width: 50%;
+}
+
+#footer {
+  background: #222;
+  color: #fff;
+}
+
+#footer h2 {
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+#footer a {
+  text-decoration: none;
+  color: #000;
+  background: #f4f4f4;
+  padding: 10px 10px;
+}
+
+#footer p {
+  padding: 20px 0px;
+}
+
+/* BOOKING */
+#book {
+  background: #fc427b;
+  color: #fff;
+  font-family: "Cursive", sans-serif;
+}
+
+#bbox {
+  display: flex;
+  border-bottom: 4px solid #fff;
+  justify-content: space-between;
+  align-items: center;
+  background: #2f3640;
+  padding: 30px;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#bbox img {
+  border: 4px solid #fff;
+}
+
+.kanan a {
+  padding: 20px 30px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #dd2476;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.kanan a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #fff;
+}
+
+/* FORM BOOK */
+#booking {
+  background: #fc427b;
+  font-family: cursive;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+}
+
+.coco {
+  width: 500px;
+  padding: 30px 15px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.form {
+  margin-top: 23px;
+  background: rgba(255, 255, 255, 0.445);
+  padding: 25px 30px;
+  border: 4px solid #f4f4f4;
+  border-radius: 25px;
+}
+
+.form-input {
+  margin: 10px 20px;
+  padding: 0 20px;
+  border: none;
+  outline: none;
+  height: 40px;
+  display: block;
+  width: 275px;
+  background: #303952;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 100px;
+  transition: 0.2s;
+}
+
+.form-input:focus {
+  background: #596275;
+}
+
+.sign-btn {
+  border: none;
+  outline: none;
+  background: #303952;
+  padding: 10px 20px;
+  color: #fff;
+  width: 100%;
+  margin-top: 25px;
+  border-radius: 100px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sign-btn:hover {
+  background: #f4f4f4;
+  color: #000;
+  border: 2px solid #000;
+}
+
+.form-input * {
+  border-radius: 100px;
+}
+
+.form img {
+  width: 100%;
+  border: 3px solid #fff;
+  border-radius: 4px;
+}
+
+.form h3 {
+  text-align: center;
+  font-size: 23px;
+}
+
+.my-btn {
+  width: 100%;
+  height: 3em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #dd2476;
+  color: #fff;
+  border-radius: 100px;
+  font-size: 14px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.my-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #222;
+  color: #222;
+}
+
+.kembali {
+  padding: 10px 10px;
+  background: #2f3640;
+}
+
+.kembali a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+/* HALAMAN ADMIN */
+#admin {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: cursive;
+  background: #f3f5f9;
+}
+
+.wrapper {
+  display: flex;
+  position: relative;
+}
+
+.wrapper .bar-kiri {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  background: #2c2c54;
+  padding: 30px 0;
+}
+
+.wrapper .bar-kiri h2 {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wrapper .bar-kiri ul li {
+  padding: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wrapper .bar-kiri ul li a {
+  color: #bdb8d7;
+  display: block;
+  text-decoration: none;
+}
+
+.wrapper .bar-kiri ul li:hover {
+  background: #594f8d;
+}
+
+.wrapper .bar-kiri ul li:hover a {
+  color: #fff;
+}
+
+.wrapper .main-content {
+  width: 100%;
+  margin-left: 200px;
+}
+
+.wrapper .main-content a {
+  text-decoration: none;
+  color: #fff;
+  font-family: Harmattan;
+  background: #dd2476;
+  padding: 5px 20px;
+  font-size: 15px;
+  border-radius: 2px;
+  transition: 0.2s;
+}
+
+.wrapper .main-content h3 span {
+  color: #dd2476;
+}
+
+.wrapper .main-content a:hover {
+  background: #fff;
+  color: #000;
+  border: 1px solid #dd2476;
+}
+
+.wrapper .main-content .header-main-content {
+  padding: 20px;
+  background: #fff;
+  font-size: 20px;
+  color: #1e272e;
+  border-bottom: 1px solid #e0e4e8;
+}
+
+.wrapper .main-content .info {
+  margin: 20px;
+  color: #1e272e;
+  line-height: 15px;
+}
+
+.info-profil h3 {
+  margin-top: 20px;
+}
+
+.info-profil img {
+  width: 230px;
+  border-radius: 50%;
+}
+
+.info table {
+  width: 100%;
+}
+
+.my-btn-admin {
+  border: none;
+  outline: none;
+  background: #2d3436;
+  color: #fff;
+  padding: 10px 25px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.my-btn-admin:hover {
+  border: 1px solid #000;
+  background: #f3f5f9;
+  color: #000;
+}
+
+@media only screen and (max-width: 600px) {
+  #menu {
+    visibility: hidden;
+  }
+
+  .login-form {
+    width: 300px;
+  }
+
+  #bbox img {
+    width: 300px;
+  }
+
+  #bbox {
+    display: block;
+  }
+
+  #bbox .kanan a {
+    padding: 7px;
+    position: relative;
+    top: 10px;
+  }
+
+  .form {
+    width: 400px;
+  }
+}

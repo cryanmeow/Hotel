@@ -1,0 +1,8 @@
+Isi Slide 
+1. Cover => Nama sistem dan tim
+2. latar belakang => alasan
+3. Tujuan
+4. Gantt Chart
+5. Usulan Program / Sistem > DFD, ERD, FC, UI(wireframe/mockup)
+6. Sistem => Penjelasan 
+7. Kesimpulan
